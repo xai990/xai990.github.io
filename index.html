@@ -139,7 +139,7 @@
                 <div class="col-md-8 offset-md-2">
                     <h3> How it works </h3>
                     <p class="text-justify" style="text-align: left;">
-    Given tumor state gene expression as the input, we use a transformer-based diffusion model conditioned on normal state gene expression to transform tumor back to normal gene expression. Model pipeline: 1. Data processing: includes replacing the NA values, applying log transformation, and normalization; 2. Cluster quality assessment: examined by silhouette scores to selected well-clustered gene sets; 3. Model training: utilizes selected gene sets for training the diffusion model; 4. Gene augmentation/Gene perturbation: implemented data augmentation or gene perturbation according to the task types and employed UMAP plots for outcome display; 5. Evaluation: Validate the core genes with gene function enrichment analysis..
+                        Using tumor state gene expression as input, we apply a transformer-based diffusion model conditioned on normal state gene expression to transform tumor gene expression back to a normal state. Additionally, GEMDiff generates synthetic bulk RNA gene expression starting from Gaussian noise. Model pipeline: 1. Data processing: includes replacing the NA values, applying log transformation, and normalization; 2. Cluster quality assessment: examined by silhouette scores to selected well-clustered gene sets; 3. Model training: utilizes selected gene sets for training the diffusion model; 4. Gene augmentation/Gene perturbation: implemented data augmentation or gene perturbation according to the task types and employed UMAP plots for outcome display; 5. Evaluation: Validate the core genes with gene function enrichment analysis..
                     </p>
                     <image width=100% src="img/Pipeline.png"
                         alt="A diagram explaining the method in broad strokes, like explained in the caption."></image>
@@ -740,7 +740,7 @@
                         alt="A diagram explaining the method in broad strokes, like explained in the caption."></image>
 
                     <figcaption class="text-justify margin-5" style="text-align: left;">
-                    CAT3D uses a <b>multi-view latent diffusion model</b> to generate novel views of the scene. This model can be conditioned on any number of <font color="#5583A8"><b>observed views</b></font>  (input images with corresponding camera poses embedded as ray coordinates), and is trained to produce multiple consistent <font color="#E3B555"><b>novel images</b></font> of the scene at specified <font color="#924956"><b>target viewpoints</b></font>. This architecture is similar to video diffusion models, but with camera pose embeddings for each image instead of time embeddings. The generated views are passed into a robust 3D reconstruction pipeline to create the 3D representation (Zip-NeRF or 3DGS).
+                    GEMDiff uses a <b>transformer-based diffusion model</b> to bridge the normal and tumor transcriptome states.By avoiding the need for task-specific hyper-parameter tuning and specific loss functions, GEMD- iff can be generalized across various tasks, making it a ro- bust tool for gene expression analysis. The model’s ability to augment RNA-seq data and simulate gene perturbations provides a valuable tool for researchers. This capability can be used to generate synthetic data for training other machine learning models, thereby addressing the issue of limited biological data and enhancing the performance of predictive models. .
                     </p>
                 </div>
             </div>
@@ -751,9 +751,7 @@
                 </h4>
 
                 <p class="text-justify" style="text-align: left;">
-                    We would like to thank Daniel Watson, Rundi Wu, Richard Tucker, Jason Baldridge, Michael Niemeyer, Rick
-                    Szeliski, Dana Roth, Jordi Pont-Tuset, Andeep Torr, Irina Blok, Doug Eck, and Henna Nandwani for their valuable
-                    contributions to this work. We also extend our gratitude to Shlomi Fruchter, Kevin Murphy, Mohammad Babaeizadeh, Han Zhang and Amir Hertz for training the base text-to-image latent diffusion model.
+                    We would like to thank Dr. Siyu Huang for the instruction of this work.
                     <br><br><br>
                 </p>
             </div>
