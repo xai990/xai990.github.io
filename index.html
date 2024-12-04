@@ -139,28 +139,17 @@
                 <div class="col-md-8 offset-md-2">
                     <h3> How it works </h3>
                     <p class="text-justify" style="text-align: left;">
-    Given tumor state gene expression as the input, we use a transformer-based diffusion model conditioned on normal state gene expression to transform tumor back to normal gene expression. The resulting views are fed to a robust 3D reconstruction pipeline, producing a 3D representation that can be rendered interactively. The total processing time (including both view generation and 3D reconstruction) runs in as little as one minute.
+    Given tumor state gene expression as the input, we use a transformer-based diffusion model conditioned on normal state gene expression to transform tumor back to normal gene expression. Model pipeline: 1. Data processing: includes replacing the NA values, applying log transformation, and normalization; 2. Cluster quality assessment: examined by silhouette scores to selected well-clustered gene sets; 3. Model training: utilizes selected gene sets for training the diffusion model; 4. Gene augmentation/Gene perturbation: implemented data augmentation or gene perturbation according to the task types and employed UMAP plots for outcome display; 5. Evaluation: Validate the core genes with gene function enrichment analysis..
                     </p>
-                    <image width=90% src="img/Pipeline.png"
+                    <image width=100% src="img/Pipeline.png"
                         alt="A diagram explaining the method in broad strokes, like explained in the caption."></image>
                 </div>
             </div><br><br>
 
             <div class="row col-md-8 offset-md-2 rounded card" style="background-color: #d0d5ec;">
-                <h2 style="text-align: center;">Interactive Results</h2>
-                Explore our 3D scenes, converted to Gaussian Splats.
-                <div class="text-center" id="splat-picker">
-                    <div id="progress-container">
-                        <dialog open id="progress-dialog">
-                            <label for="progress-indicator">Loading model...</label>
-                            <progress max="100" id="progress-indicator"></progress>
-                        </dialog>
-                    </div>
-
-                    <canvas id="splat-canvas" class="w-100 rounded"
-                        style="max-width:440px; aspect-ratio: 1; cursor: grab; margin-left: auto;
-                        margin-right: auto;"></canvas>
-                </div>
+                <h2 style="text-align: center;">Augumentation Results</h2>
+                Cover range of gene features from 8 to 256.
+                
 
                 <div class="splat-carousel position-relative" id="splat-carousel" role="group" aria-relevant="additions text">
                     <div class="splat-carousel-items">
