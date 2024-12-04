@@ -139,13 +139,10 @@
                 <div class="col-md-8 offset-md-2">
                     <h3> How it works </h3>
                     <p class="text-justify" style="text-align: left;">
-    Given any number of input images, we use a multi-view diffusion model conditioned on those images to generate novel views of the scene. The resulting views are fed to a robust 3D reconstruction pipeline, producing a 3D representation that can be rendered interactively. The total processing time (including both view generation and 3D reconstruction) runs in as little as one minute.
+    Given tumor state gene expression as the input, we use a transformer-based diffusion model conditioned on normal state gene expression to transform tumor back to normal gene expression. The resulting views are fed to a robust 3D reconstruction pipeline, producing a 3D representation that can be rendered interactively. The total processing time (including both view generation and 3D reconstruction) runs in as little as one minute.
                     </p>
-                    <video muted loop autoplay src="videos/howitworks.mp4" style="max-width:878px" width=100%>
-                        An animated diagram briefly describing the method. On the left, an input image is shown. Next are samples from the
-                        diffusion model (5 secs), with a spinning camera path. Finally, it shows the optimised 3D Model obtained by
-                        optimizing a NeRF (55 seconds).
-                    </video>
+                    <image width=90% src="img/Pipeline.png"
+                        alt="A diagram explaining the method in broad strokes, like explained in the caption."></image>
                 </div>
             </div><br><br>
 
@@ -777,7 +774,7 @@
                         <h4 style="text-align: center">BibTeX </h4>
                     </label>
                     <textarea id="bibtex" class="form-control" readonly>
-@article{DA2024,
+@article{DA2024GEMDiff,
     title={A Diffusion workflow bridges between breast normal and tumor gene expression states},
     author={Yucong Dai, Xusheng Ai
     },
